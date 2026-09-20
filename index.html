@@ -1,67 +1,295 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitBuddy - Your Fitness Assistant</title>
-
+    <title>FitBuddy | Your Fitness Companion</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="app">
+<div class="app">
 
-        <header class="header">
-            <div class="logo">💪 FitBuddy</div>
-            <p>Your Personal Fitness Assistant</p>
-        </header>
+    <!-- HEADER -->
+    <header class="top-header">
+        <div>
+            <h1>💪 FitBuddy</h1>
+            <p>Your personal fitness companion</p>
+        </div>
+        <div class="profile-icon">👤</div>
+    </header>
 
-        <main class="chat-container">
 
-            <div id="chatBox" class="chat-box">
-                <div class="message bot-message">
-                    <strong>FitBuddy:</strong>
-                    <p>Hi! 👋 I'm FitBuddy, your personal fitness assistant. How can I help you today?</p>
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HOME -->
+        <section id="home" class="screen active">
+
+            <div class="welcome-card">
+                <p class="small-text">WELCOME BACK 👋</p>
+                <h2>Ready to get moving?</h2>
+                <p>Small steps every day can create big changes.</p>
+
+                <button class="primary-button" onclick="showScreen('workouts')">
+                    Start a Workout →
+                </button>
+            </div>
+
+            <h2 class="section-title">Quick Actions</h2>
+
+            <div class="quick-grid">
+
+                <button class="quick-card" onclick="showScreen('fitbuddy')">
+                    <span>🤖</span>
+                    <strong>Ask FitBuddy</strong>
+                    <small>Get fitness advice</small>
+                </button>
+
+                <button class="quick-card" onclick="showScreen('workouts')">
+                    <span>🏋️</span>
+                    <strong>Workouts</strong>
+                    <small>Find an exercise</small>
+                </button>
+
+                <button class="quick-card" onclick="showScreen('nutrition')">
+                    <span>🥗</span>
+                    <strong>Nutrition</strong>
+                    <small>Healthy eating tips</small>
+                </button>
+
+                <button class="quick-card" onclick="showScreen('progress')">
+                    <span>📊</span>
+                    <strong>My Progress</strong>
+                    <small>Track your journey</small>
+                </button>
+
+            </div>
+
+
+            <div class="daily-card">
+                <span>🔥</span>
+                <div>
+                    <h3>Daily Motivation</h3>
+                    <p>Consistency is more important than perfection. Keep going!</p>
                 </div>
             </div>
 
-            <div class="suggestions">
-                <button onclick="quickMessage('Give me a workout plan')">
-                    🏋️ Workout
-                </button>
+        </section>
 
-                <button onclick="quickMessage('Give me healthy eating advice')">
-                    🥗 Nutrition
-                </button>
 
-                <button onclick="quickMessage('Give me fitness motivation')">
-                    🔥 Motivation
-                </button>
+        <!-- FITBUDDY CHAT -->
+        <section id="fitbuddy" class="screen">
+
+            <div class="page-heading">
+                <h2>🤖 Ask FitBuddy</h2>
+                <p>Your personal fitness assistant</p>
             </div>
 
-            <div class="input-area">
+            <div id="chatBox" class="chat-box">
+
+                <div class="message bot-message">
+                    <strong>FitBuddy:</strong>
+                    <p>
+                        Hi! 👋 I'm FitBuddy. Ask me about workouts,
+                        nutrition, hydration or motivation.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="chat-input">
+
                 <input
                     type="text"
                     id="userInput"
-                    placeholder="Ask FitBuddy something..."
+                    placeholder="Ask FitBuddy..."
                     autocomplete="off"
                 >
 
                 <button id="sendButton" onclick="sendMessage()">
-                    Send
+                    ➤
                 </button>
+
             </div>
 
-        </main>
+        </section>
 
-        <footer>
-            <p>FitBuddy © 2026 | Your journey, your progress 💪</p>
-        </footer>
 
-    </div>
+        <!-- WORKOUTS -->
+        <section id="workouts" class="screen">
 
-    <script src="script.js"></script>
+            <div class="page-heading">
+                <h2>🏋️ Workouts</h2>
+                <p>Choose a workout that suits you.</p>
+            </div>
+
+            <div class="workout-card">
+                <span>🌱</span>
+                <div>
+                    <h3>Beginner Workout</h3>
+                    <p>20 minutes • Full body</p>
+                </div>
+                <button onclick="startWorkout('Beginner Workout')">Start</button>
+            </div>
+
+            <div class="workout-card">
+                <span>🏠</span>
+                <div>
+                    <h3>Home Workout</h3>
+                    <p>15 minutes • No equipment</p>
+                </div>
+                <button onclick="startWorkout('Home Workout')">Start</button>
+            </div>
+
+            <div class="workout-card">
+                <span>🔥</span>
+                <div>
+                    <h3>Full Body Workout</h3>
+                    <p>30 minutes • Moderate</p>
+                </div>
+                <button onclick="startWorkout('Full Body Workout')">Start</button>
+            </div>
+
+        </section>
+
+
+        <!-- NUTRITION -->
+        <section id="nutrition" class="screen">
+
+            <div class="page-heading">
+                <h2>🥗 Nutrition</h2>
+                <p>Simple tips for healthier eating.</p>
+            </div>
+
+            <div class="nutrition-card">
+                <span>💧</span>
+                <h3>Stay Hydrated</h3>
+                <p>Drink water regularly throughout the day.</p>
+            </div>
+
+            <div class="nutrition-card">
+                <span>🥦</span>
+                <h3>Eat More Whole Foods</h3>
+                <p>Include vegetables, fruits, whole grains and protein in your meals.</p>
+            </div>
+
+            <div class="nutrition-card">
+                <span>🍽️</span>
+                <h3>Balanced Meals</h3>
+                <p>Try to include a variety of nutritious foods rather than focusing on one food group.</p>
+            </div>
+
+        </section>
+
+
+        <!-- PROGRESS -->
+        <section id="progress" class="screen">
+
+            <div class="page-heading">
+                <h2>📊 My Progress</h2>
+                <p>Keep track of your fitness journey.</p>
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <span>🏋️</span>
+                    <strong id="workoutCount">0</strong>
+                    <small>Workouts</small>
+                </div>
+
+                <div class="stat-card">
+                    <span>🔥</span>
+                    <strong>0</strong>
+                    <small>Day Streak</small>
+                </div>
+
+                <div class="stat-card">
+                    <span>⏱️</span>
+                    <strong>0</strong>
+                    <small>Minutes</small>
+                </div>
+
+            </div>
+
+            <div class="progress-message">
+                <h3>🌟 Keep Going!</h3>
+                <p>Your progress will appear here as you complete workouts.</p>
+            </div>
+
+        </section>
+
+
+        <!-- PROFILE -->
+        <section id="profile" class="screen">
+
+            <div class="page-heading">
+                <h2>👤 My Profile</h2>
+                <p>Set your personal fitness goals.</p>
+            </div>
+
+            <div class="profile-card">
+
+                <div class="large-avatar">👤</div>
+
+                <h3>FitBuddy Member</h3>
+
+                <label>Fitness Goal</label>
+
+                <select id="fitnessGoal">
+                    <option>Improve my fitness</option>
+                    <option>Build strength</option>
+                    <option>Improve endurance</option>
+                    <option>Stay active</option>
+                </select>
+
+                <button class="primary-button" onclick="saveProfile()">
+                    Save Goal
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bottom-nav">
+
+        <button onclick="showScreen('home')" class="nav-button active">
+            <span>🏠</span>
+            <small>Home</small>
+        </button>
+
+        <button onclick="showScreen('fitbuddy')" class="nav-button">
+            <span>🤖</span>
+            <small>FitBuddy</small>
+        </button>
+
+        <button onclick="showScreen('workouts')" class="nav-button">
+            <span>🏋️</span>
+            <small>Workouts</small>
+        </button>
+
+        <button onclick="showScreen('progress')" class="nav-button">
+            <span>📊</span>
+            <small>Progress</small>
+        </button>
+
+        <button onclick="showScreen('profile')" class="nav-button">
+            <span>👤</span>
+            <small>Profile</small>
+        </button>
+
+    </nav>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
