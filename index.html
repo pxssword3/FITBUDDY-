@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitBuddy - Your Fitness Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header class="header">
+            <div class="logo">💪 FitBuddy</div>
+            <p>Your Personal Fitness Assistant</p>
+        </header>
+
+        <main class="chat-container">
+
+            <div id="chatBox" class="chat-box">
+                <div class="message bot-message">
+                    <strong>FitBuddy:</strong>
+                    <p>Hi! 👋 I'm FitBuddy, your personal fitness assistant. How can I help you today?</p>
+                </div>
+            </div>
+
+            <div class="suggestions">
+                <button onclick="quickMessage('Give me a workout plan')">
+                    🏋️ Workout
+                </button>
+
+                <button onclick="quickMessage('Give me healthy eating advice')">
+                    🥗 Nutrition
+                </button>
+
+                <button onclick="quickMessage('Give me fitness motivation')">
+                    🔥 Motivation
+                </button>
+            </div>
+
+            <div class="input-area">
+                <input
+                    type="text"
+                    id="userInput"
+                    placeholder="Ask FitBuddy something..."
+                    autocomplete="off"
+                >
+
+                <button id="sendButton" onclick="sendMessage()">
+                    Send
+                </button>
+            </div>
+
+        </main>
+
+        <footer>
+            <p>FitBuddy © 2026 | Your journey, your progress 💪</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
